@@ -1,0 +1,14 @@
+{
+  "name": "react-native-yusha-customkeyboard",
+  "version": "0.0.1",
+  "description": "react native custom keyboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react-native-svg": "6.0.1-rc.1"
+  },
+  "author": "yusha",
+  "license": "ISC"
+}
