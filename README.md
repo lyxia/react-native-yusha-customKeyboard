@@ -9,7 +9,8 @@ RN版本0.50及以上
 
 ```
 yarn add react-native-yusha-customkeyboard
-react-native link 
+react-native link react-native-yusha-customkeyboard
+react-native link react-native-svg
 ```
 
 ### 使用：
