@@ -117,7 +117,7 @@ export default class KeyBoard extends Component{
                     <View style={styles.top}>
                         <View style={styles.topLeft}>
                             <Image source={require('./views/images/anquanbaohu.png')} />
-                            <Text style={styles.topDesText}>合富金融安全键盘</Text>
+                            <Text style={styles.topDesText}>安全键盘</Text>
                         </View>
                         <TouchableOpacity onPress={this._clearFocus}>
                             <Text style={styles.topCompleteText}>完成</Text>
