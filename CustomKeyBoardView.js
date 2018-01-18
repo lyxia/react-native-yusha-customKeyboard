@@ -114,15 +114,21 @@ export default class KeyBoard extends Component{
         return (
             <View onLayout={this._onLayout} style={styles.container} ref="keyboard" pointerEvents="box-none">
                 <View style={styles.keyBoard} key="keyboard">
-                    <View style={styles.top}>
-                        <View style={styles.topLeft}>
-                            <Image source={require('./views/images/anquanbaohu.png')} />
-                            <Text style={styles.topDesText}>合富金融安全键盘</Text>
-                        </View>
-                        <TouchableOpacity onPress={this._clearFocus}>
-                            <Text style={styles.topCompleteText}>完成</Text>
-                        </TouchableOpacity>
-                    </View>
+                    {
+                        !KeyBoardView.customKeyboardTop && (
+                            <View style={styles.top}>
+                                <View style={styles.topLeft}>
+                                    {
+                                        KeyBoardView.getKeyBoardIcon && KeyBoardView.getKeyBoardIcon()
+                                    }
+                                    <Text style={styles.topDesText}>{KeyBoardView.getKeyBoardName && KeyBoardView.getKeyBoardName()}</Text>
+                                </View>
+                                <TouchableOpacity onPress={this._clearFocus}>
+                                    <Text style={styles.topCompleteText}>完成</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )
+                    }
                     <KeyBoardView
                         {...this.props}
                         onKeyPress={this._handleKeyPress}
