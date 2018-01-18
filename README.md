@@ -95,6 +95,10 @@ export default class App extends Component<{}> {
           customKeyboardType="safeKeyBoard"
           placeholder="safeKeyBoard"
         />
+        <CustomKeyboard.CustomTextInput
+              customKeyboardType="testKeyboard"
+              placeholder="testKeyboard"
+          />
       </CustomKeyboard.AwareCusKeyBoardScrollView>
     );
   }
