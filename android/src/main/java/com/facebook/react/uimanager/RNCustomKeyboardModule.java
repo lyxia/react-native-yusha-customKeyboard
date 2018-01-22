@@ -35,6 +35,7 @@ public class RNCustomKeyboardModule extends ReactContextBaseJavaModule {
     private final int TAG_ID = 0xdeadbeaf;
     private final ReactApplicationContext reactContext;
     private ReactEditText curEditText;
+    private boolean showKeyboard = false;
 
     public RNCustomKeyboardModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -68,25 +69,35 @@ public class RNCustomKeyboardModule extends ReactContextBaseJavaModule {
                     @Override
                     public void onFocusChange(final View v, boolean hasFocus) {
                         if (hasFocus) {
-                            curEditText = (ReactEditText) v;
-                            View keyboard = (View)edit.getTag(TAG_ID);
-                            if (keyboard.getParent() == null) {
-                                activity.addContentView(keyboard, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                                WritableMap data = Arguments.createMap();
-                                data.putInt("tag", tag);
-                                Log.i("react-native", "------1data: " + data);
-                                sendEvent("showCustomKeyboard", data);
-                            }
                             UiThreadUtil.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     ((InputMethodManager) getReactApplicationContext().getSystemService(Activity.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(v.getWindowToken(), 0);
+                                    curEditText = (ReactEditText) v;
+                                    showKeyboard = true;
+                                    WritableMap data = Arguments.createMap();
+                                    data.putInt("tag", tag);
+                                    Log.i("react-native", "------1data: " + data);
+                                    sendEvent("showCustomKeyboard", data);
+                                    new Handler().postDelayed(new Runnable(){
+                                        public void run() {
+                                            //execute the task
+                                            if(showKeyboard) {
+                                                View keyboard = (View)curEditText.getTag(TAG_ID);
+                                                final Activity activity = getCurrentActivity();
+                                                if (keyboard.getParent() == null) {
+                                                    activity.addContentView(keyboard, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                                                }
+                                            }
+                                        }
+                                    }, 100);
                                 }
                             });
                         } else {
                             if (v == curEditText) {
                                 View keyboard = (View)edit.getTag(TAG_ID);
                                 if (keyboard.getParent() != null) {
+                                    showKeyboard = false;
                                     ((ViewGroup) keyboard.getParent()).removeView(keyboard);
                                     WritableMap data = Arguments.createMap();
                                     data.putInt("tag", tag);

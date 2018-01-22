@@ -12,6 +12,7 @@ import {
   findNodeHandle,
   AppRegistry,
     DeviceInfo,
+    AppState,
 } from 'react-native';
 
 import CustomKeyBoardView from './CustomKeyBoardView'
@@ -112,13 +113,27 @@ export class CustomTextInput extends Component {
             this.showSub = addKeyBoardShowListener(this._showKeyboard);
             this.hideSub = addKeyBoardHideListener(this._hideKeyboard);
         }
+
+        AppState.addEventListener('change', this._handleAppStateChange);
     }, 300)
   }
   componentWillUnmount() {
     this.showSub && removeKeyBoardListener(this.showSub);
     this.hideSub && removeKeyBoardListener(this.hideSub);
     this.installTime && clearTimeout(this.installTime)
+    AppState.removeEventListener('change', this._handleAppStateChange);
   }
+
+_handleAppStateChange = (nextAppState: string) => {
+    if (nextAppState === 'background') {
+        //检查键盘
+        if (TextInput.State.currentlyFocusedField() === findNodeHandle(this.input)) {
+            TextInput.State.blurTextInput(TextInput.State.currentlyFocusedField())
+            return true
+        }
+    }
+}
+
   componentWillReceiveProps(newProps) {
     if (newProps.customKeyboardType !== this.props.customKeyboardType) {
       install(findNodeHandle(this.input), newProps.customKeyboardType);
