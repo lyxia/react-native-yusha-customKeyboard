@@ -245,6 +245,7 @@
 					"$(BUILT_PRODUCTS_DIR)/include",
 					"$(SRCROOT)/../../react-native/Libraries/Text",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -263,6 +264,7 @@
 					"$(BUILT_PRODUCTS_DIR)/include",
 					"$(SRCROOT)/../../react-native/Libraries/Text",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
