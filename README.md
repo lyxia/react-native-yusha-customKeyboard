@@ -16,7 +16,7 @@ react-native link react-native-svg
 ### 使用：
 - 导入react-native-yusha-customkeyboard
 ```
-import * as CustomKeyboard from 'react-native-yusha-customKeyboard'
+import * as CustomKeyboard from 'react-native-yusha-customkeyboard'
 ```
 - 注册键盘：
 ```
@@ -77,7 +77,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import * as CustomKeyboard from 'react-native-yusha-customKeyboard'
+import * as CustomKeyboard from 'react-native-yusha-customkeyboard'
 
 export default class App extends Component<{}> {
   render() {
