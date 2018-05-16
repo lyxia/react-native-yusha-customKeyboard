@@ -3,8 +3,10 @@ react native自定义键盘
 
 iOS，Android双平台使用，适配iPhoneX，博文地址：https://www.jianshu.com/p/6b6879323069
 
-RN版本：
+### RN版本：
+
 0.50~0.52：  0.0.7
+
 0.53及之后版：0.0.8
 
 ### 安装：
@@ -137,7 +139,7 @@ const styles = StyleSheet.create({
 - removeKeyBoardListener：移除键盘监听
 
 ### 示例运行：
-1、git clone https://github.com/lyxia/react-native-yusha-customKeyboard.git
-2、cd react-native-yusha-customKeyboard
-3、yarn install
-4、react-native run-ios/android
+- git clone https://github.com/lyxia/react-native-yusha-customKeyboard.git
+- cd react-native-yusha-customKeyboard
+- yarn install
+- react-native run-ios/android
