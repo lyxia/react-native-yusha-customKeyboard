@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
 - CustomKeyboard.CustomTextInput：带自定义键盘的输入框
   - customKeyboardType：自定义键盘类型，numberKeyBoard（数字键盘，不带小数点），numberKeyBoardWithDot（数字键盘，带小数点），safeKeyBoard（字母、数字、符号组合键盘，可切换）
   - 其他属性同TextInput所用的属性
-- AwareCusKeyBoardScrollView：自适应键盘区域，防止输入框被键盘遮住（自定义键盘、系统键盘）
+- AwareCusKeyBoardScrollView：自适应键盘区域，防止输入框被键盘遮住（自定义键盘、系统键盘,iOS建议使用https://github.com/hackiftekhar/IQKeyboardManager 来做自适应键盘区域，防止输入框被键盘遮住）
 - currentHeight：自定义键盘高度
 - addKeyBoardShowListener：监听键盘显示
 - addKeyBoardHideListener：监听键盘隐藏
