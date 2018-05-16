@@ -140,6 +140,6 @@ const styles = StyleSheet.create({
 
 ### 示例运行：
 - git clone https://github.com/lyxia/react-native-yusha-customKeyboard.git
-- cd react-native-yusha-customKeyboard
+- cd react-native-yusha-customKeyboard/RNDemo
 - yarn install
 - react-native run-ios/android
