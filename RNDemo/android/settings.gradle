@@ -1,7 +1,0 @@
-rootProject.name = 'RNDemo'
-include ':react-native-svg'
-project(':react-native-svg').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-svg/android')
-include ':react-native-yusha-customkeyboard'
-project(':react-native-yusha-customkeyboard').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-yusha-customkeyboard/android')
-
-include ':app'
