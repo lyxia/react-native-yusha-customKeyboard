@@ -239,12 +239,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 297S5J6Z2U;
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../react-native/React",
-					"$(SRCROOT)/../../react-native/Libraries",
-					"$(BUILT_PRODUCTS_DIR)/include",
-					"$(SRCROOT)/../../react-native/Libraries/Text",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/Libraries/Text/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,12 +253,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 297S5J6Z2U;
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../react-native/React",
-					"$(SRCROOT)/../../react-native/Libraries",
-					"$(BUILT_PRODUCTS_DIR)/include",
-					"$(SRCROOT)/../../react-native/Libraries/Text",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/Libraries/Text/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
