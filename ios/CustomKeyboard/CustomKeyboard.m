@@ -1,7 +1,7 @@
 
 #import "CustomKeyboard.h"
 #import <React/RCTUIManager.h>
-#import "RCTBaseTextInputView"
+#import "RCTBaseTextInputView.h"
 
 @implementation CustomKeyboard
 
